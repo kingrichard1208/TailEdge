@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TailEdge — AI-Powered Sports Picks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="logo"><i class="fa-solid fa-chart-line"></i> TailEdge</div>
+    <nav class="nav-links">
+      <a href="#how">How It Works</a>
+      <a href="#demo">Live Picks</a>
+      <a href="#stats">Stats &amp; Weather</a>
+      <a href="#record">Track Record</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#pricing" class="btn-primary nav-cta">Get Picks</a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.pexels.com/photos/31160153/pexels-photo-31160153.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Football stadium crowd under lights" />
+    <div class="hero-scrim"></div>
+  </div>
+  <div class="hero-content">
+    <span class="eyebrow">NFL &middot; NBA &middot; NHL &middot; WNBA &middot; MLB</span>
+    <h1>Tail The Edge.<br>Win The Season.</h1>
+    <p>AI-driven picks, daily and year-round, across all five major leagues. Every pick scored, every result published — win or lose.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn-primary">See Plans</a>
+      <a href="#demo" class="btn-secondary">Try a Free Pick</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>5</strong><span>Leagues Covered</span></div>
+      <div class="stat"><strong>365</strong><span>Days a Year</span></div>
+      <div class="stat"><strong>100%</strong><span>Results Published</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="league-strip">
+  <div class="league-strip-inner">
+    <div class="league-chip">
+      <img src="https://images.pexels.com/photos/31160153/pexels-photo-31160153.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Football" />
+      <span>NFL</span>
+    </div>
+    <div class="league-chip">
+      <img src="https://images.pexels.com/photos/220383/pexels-photo-220383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Basketball" />
+      <span>NBA</span>
+    </div>
+    <div class="league-chip">
+      <img src="https://images.pexels.com/photos/35643107/pexels-photo-35643107.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hockey" />
+      <span>NHL</span>
+    </div>
+    <div class="league-chip">
+      <img src="https://images.pexels.com/photos/220383/pexels-photo-220383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Basketball" />
+      <span>WNBA</span>
+    </div>
+    <div class="league-chip">
+      <img src="https://images.pexels.com/photos/163248/home-plate-baseball-sport-home-163248.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Baseball" />
+      <span>MLB</span>
+    </div>
+  </div>
+</section>
+
+<section class="section how" id="how">
+  <div class="section-head">
+    <span class="tag">The Model</span>
+    <h2>How the TailEdge AI Builds Every Pick</h2>
+  </div>
+  <div class="how-grid">
+    <div class="how-card">
+      <i class="fa-solid fa-database"></i>
+      <h3>1. Data Ingestion</h3>
+      <p>Injury reports, weather, referee/umpire tendencies, pace, travel schedule and years of matchup history feed the model every morning.</p>
+    </div>
+    <div class="how-card">
+      <i class="fa-solid fa-brain"></i>
+      <h3>2. Confidence Scoring</h3>
+      <p>Every market gets a 0–100 confidence score from the model — not a gut feeling, a number you can compare pick to pick.</p>
+    </div>
+    <div class="how-card">
+      <i class="fa-solid fa-magnifying-glass-dollar"></i>
+      <h3>3. Line Shopping</h3>
+      <p>We scan lines across major sportsbooks so the number attached to your pick is the best price available that day.</p>
+    </div>
+    <div class="how-card">
+      <i class="fa-solid fa-bolt"></i>
+      <h3>4. Daily Drop</h3>
+      <p>Picks release on a fixed daily schedule by tier — higher tiers get more picks, more markets, and earlier access.</p>
+    </div>
+  </div>
+  <p class="disclaimer-inline">TailEdge picks are sports analysis provided for entertainment and informational purposes. No service can guarantee winning results.</p>
+</section>
+
+<section class="section demo" id="demo">
+  <div class="section-head">
+    <span class="tag">Live Feed</span>
+    <h2>Today's Pick Board</h2>
+    <p class="sub">Switch tiers below to see exactly what unlocks at each level.</p>
+  </div>
+  <div class="tier-toggle" id="tierToggle">
+    <button data-tier="free" class="tier-btn active">Rookie</button>
+    <button data-tier="starter" class="tier-btn">Starter</button>
+    <button data-tier="pro" class="tier-btn">Pro</button>
+    <button data-tier="elite" class="tier-btn">Elite</button>
+  </div>
+  <div class="pick-grid" id="pickGrid"></div>
+</section>
+
+<section class="section stats-hub" id="stats">
+  <div class="section-head">
+    <span class="tag">Model Inputs</span>
+    <h2>Stats &amp; Weather Intelligence</h2>
+    <p class="sub">The same team data, player data, and weather modeling the pick engine runs on — a full 130+ team / 300+ player dataset lives in the downloadable workbook; a sample is shown here.</p>
+  </div>
+
+  <div class="stats-tabs" id="statsTabs">
+    <button data-league="NFL" class="stats-tab-btn active">NFL</button>
+    <button data-league="NBA" class="stats-tab-btn">NBA</button>
+    <button data-league="NHL" class="stats-tab-btn">NHL</button>
+    <button data-league="WNBA" class="stats-tab-btn">WNBA</button>
+    <button data-league="MLB" class="stats-tab-btn">MLB</button>
+  </div>
+
+  <div class="table-wrap">
+    <table class="record-table" id="teamStatsTable">
+      <thead><tr id="teamStatsHead"></tr></thead>
+      <tbody id="teamStatsBody"></tbody>
+    </table>
+  </div>
+  <p class="disclaimer-inline">*Sample team data shown for demonstration. Full production version connects to a licensed live sports-data feed.</p>
+
+  <div class="table-wrap" style="margin-top:20px;">
+    <table class="record-table" id="playerStatsTable">
+      <thead><tr id="playerStatsHead"></tr></thead>
+      <tbody id="playerStatsBody"></tbody>
+    </table>
+  </div>
+  <p class="disclaimer-inline">*Player rows use generic position slots (QB1, PG1, C1, SP1, etc.) rather than named athletes — real player identities and imagery require individual licensing agreements.</p>
+
+  <div class="weather-block">
+    <div class="weather-head">
+      <span class="tag">Weather Engine</span>
+      <h3>How Conditions Move the Model</h3>
+      <p class="sub">Outdoor leagues only — NBA, WNBA and NHL are played indoors, so weather isn't a factor in those markets.</p>
+    </div>
+    <div class="weather-calc">
+      <div class="weather-inputs">
+        <div class="weather-sport-toggle" id="weatherSportToggle">
+          <button data-wsport="NFL" class="wsport-btn active">NFL</button>
+          <button data-wsport="MLB" class="wsport-btn">MLB</button>
+        </div>
+
+        <div id="nflInputs" class="weather-input-group">
+          <label>Wind speed: <span id="windVal">8</span> mph</label>
+          <input type="range" id="windSlider" min="0" max="40" value="8">
+          <label>Temperature: <span id="tempVal">55</span>&deg;F</label>
+          <input type="range" id="tempSlider" min="0" max="100" value="55">
+        </div>
+
+        <div id="mlbInputs" class="weather-input-group" style="display:none;">
+          <label>Temperature: <span id="mlbTempVal">72</span>&deg;F</label>
+          <input type="range" id="mlbTempSlider" min="30" max="105" value="72">
+          <label>Ballpark elevation</label>
+          <select id="elevationSelect">
+            <option value="sea">Sea level</option>
+            <option value="high">High altitude (e.g. Coors Field, ~5,200 ft)</option>
+          </select>
+          <label>Wind direction</label>
+          <select id="windDirSelect">
+            <option value="calm">Calm / crosswind</option>
+            <option value="out">Blowing out</option>
+            <option value="in">Blowing in</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="weather-output" id="weatherOutput">
+        <div class="wo-badge" id="woBadge">Normal Conditions</div>
+        <p id="woText">Passing efficiency and kicking accuracy near season norms — no material line adjustment.</p>
+      </div>
+    </div>
+    <p class="disclaimer-inline">Impact bands are calibrated from publicly available research on wind/temperature effects on NFL passing &amp; kicking, and temperature/altitude/humidity effects on MLB batted-ball carry. Heuristic model for illustration, not a precise physics simulation.</p>
+  </div>
+</section>
+
+<section class="section record" id="record">
+  <div class="section-head">
+    <span class="tag">Transparency</span>
+    <h2>Published Track Record</h2>
+    <p class="sub">Every pick, every tier, every result — nothing hidden.</p>
+  </div>
+  <div class="table-wrap">
+    <table class="record-table">
+      <thead>
+        <tr><th>Tier</th><th>Last 30 Days</th><th>Record</th><th>Win %</th><th>Units</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Rookie (Free)</td><td>Rolling 30d</td><td>14–11</td><td>56%</td><td class="pos">+2.1u</td></tr>
+        <tr><td>Starter</td><td>Rolling 30d</td><td>38–24</td><td>61%</td><td class="pos">+8.4u</td></tr>
+        <tr><td>Pro</td><td>Rolling 30d</td><td>71–42</td><td>63%</td><td class="pos">+15.7u</td></tr>
+        <tr><td>Elite — Lock of the Day</td><td>Rolling 30d</td><td>22–9</td><td>71%</td><td class="pos">+12.3u</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="disclaimer-inline">*Sample data shown for demonstration purposes only. Past performance never guarantees future results.</p>
+</section>
+
+<section class="section pricing" id="pricing">
+  <div class="section-head">
+    <span class="tag">Membership</span>
+    <h2>Choose Your Edge</h2>
+    <p class="sub">More access, sharper markets, earlier drops — cancel anytime.</p>
+  </div>
+  <div class="billing-toggle">
+    <span class="billing-label active" id="labelMonthly">Monthly</span>
+    <label class="switch">
+      <input type="checkbox" id="billingSwitch">
+      <span class="slider"></span>
+    </label>
+    <span class="billing-label" id="labelAnnual">Annual <em>(2 months free)</em></span>
+  </div>
+
+  <div class="pricing-grid">
+
+    <div class="price-card" data-tier="free">
+      <h3>Rookie</h3>
+      <p class="price-desc">Get a feel for the model with zero commitment.</p>
+      <div class="price"><span class="amount">$0</span><span class="period">/forever</span></div>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> 1 free pick per day (moneyline only)</li>
+        <li><i class="fa-solid fa-check"></i> Delayed drop, 30 min before kickoff</li>
+        <li><i class="fa-solid fa-check"></i> Public results tracker access</li>
+        <li><i class="fa-solid fa-check"></i> Community leaderboard</li>
+      </ul>
+      <a href="#" class="btn-secondary full">Start Free</a>
+    </div>
+
+    <div class="price-card" data-tier="starter">
+      <h3>Starter</h3>
+      <p class="price-desc">Daily coverage across every league, no delay.</p>
+      <div class="price"><span class="amount" data-monthly="19.99" data-annual="16.58">$19.99</span><span class="period">/mo</span></div>
+      <p class="annual-note" style="display:none;">Billed $199/year</p>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Everything in Rookie</li>
+        <li><i class="fa-solid fa-check"></i> 3 picks per day, all 5 leagues</li>
+        <li><i class="fa-solid fa-check"></i> Spreads, totals &amp; moneylines</li>
+        <li><i class="fa-solid fa-check"></i> Real-time drop, no delay</li>
+        <li><i class="fa-solid fa-check"></i> Star confidence rating</li>
+        <li><i class="fa-solid fa-check"></i> SMS &amp; push alerts</li>
+      </ul>
+      <a href="#" class="btn-secondary full">Choose Starter</a>
+    </div>
+
+    <div class="price-card featured" data-tier="pro">
+      <span class="badge-pop">Most Popular</span>
+      <h3>Pro</h3>
+      <p class="price-desc">Player props unlocked and full model transparency.</p>
+      <div class="price"><span class="amount" data-monthly="49.99" data-annual="41.58">$49.99</span><span class="period">/mo</span></div>
+      <p class="annual-note" style="display:none;">Billed $499/year</p>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Everything in Starter</li>
+        <li><i class="fa-solid fa-check"></i> 6–8 picks per day</li>
+        <li><i class="fa-solid fa-check"></i> Player prop picks unlocked</li>
+        <li><i class="fa-solid fa-check"></i> AI Confidence Score (0–100)</li>
+        <li><i class="fa-solid fa-check"></i> Daily parlay card</li>
+        <li><i class="fa-solid fa-check"></i> Line-movement alerts</li>
+        <li><i class="fa-solid fa-check"></i> Private Discord community</li>
+      </ul>
+      <a href="#" class="btn-primary full">Choose Pro</a>
+    </div>
+
+    <div class="price-card" data-tier="elite">
+      <h3>Elite</h3>
+      <p class="price-desc">Earliest access and the model's single highest-conviction play.</p>
+      <div class="price"><span class="amount" data-monthly="149.99" data-annual="124.92">$149.99</span><span class="period">/mo</span></div>
+      <p class="annual-note" style="display:none;">Billed $1,499/year</p>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Everything in Pro</li>
+        <li><i class="fa-solid fa-check"></i> "Lock of the Day" — top 3% conviction</li>
+        <li><i class="fa-solid fa-check"></i> 12-hour early access</li>
+        <li><i class="fa-solid fa-check"></i> 1-on-1 analyst chat access</li>
+        <li><i class="fa-solid fa-check"></i> Personalized bankroll plan</li>
+        <li><i class="fa-solid fa-check"></i> Exclusive player-prop model</li>
+        <li><i class="fa-solid fa-check"></i> Monthly strategy call</li>
+      </ul>
+      <a href="#" class="btn-secondary full">Choose Elite</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section proof">
+  <div class="proof-inner">
+    <img src="https://images.pexels.com/photos/35643107/pexels-photo-35643107.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Ice hockey player taking a shot" class="proof-img" />
+    <div class="proof-text">
+      <span class="tag">Why Subscribers Stay</span>
+      <h2>Every pick, tracked in public.</h2>
+      <p>Most pick services hide their losses. TailEdge publishes the full ledger — every tier, every league, every result — so you can judge the model on the same numbers we do.</p>
+      <ul class="proof-list">
+        <li><i class="fa-solid fa-lock-open"></i> No hidden results, ever</li>
+        <li><i class="fa-solid fa-calendar-check"></i> Coverage 365 days a year, including off-seasons via futures markets</li>
+        <li><i class="fa-solid fa-scale-balanced"></i> Built for long-term edge, not one lucky night</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials">
+  <div class="section-head">
+    <span class="tag">Subscribers</span>
+    <h2>What Members Say</h2>
+  </div>
+  <div class="testimonial-wrap">
+    <div class="testimonial-track" id="testimonialTrack">
+      <div class="testimonial-card">
+        <p>"TailEdge's Pro tier paid for itself in the first two weeks of the season."</p>
+        <span>— Marcus T., Pro subscriber</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Love that they publish every result, not just the wins."</p>
+        <span>— Jenna R., Starter subscriber</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The Lock of the Day has been the most consistent part of my whole bankroll."</p>
+        <span>— Dave K., Elite subscriber</span>
+      </div>
+    </div>
+  </div>
+  <p class="disclaimer-inline">*Demo testimonials shown for illustration purposes.</p>
+</section>
+
+<section class="section faq" id="faq">
+  <div class="section-head">
+    <span class="tag">Questions</span>
+    <h2>Frequently Asked</h2>
+  </div>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item">
+      <button class="faq-q">Is TailEdge legal in my state? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-a"><p>Yes. TailEdge sells sports analysis and picks content, which is legal nationwide — including in states where sports wagering itself isn't offered. Where and how you choose to wager is your own responsibility under your local laws.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you guarantee winning picks? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-a"><p>No service can guarantee winning bets, including us. The model is built for long-term positive expected value and full transparency — we publish every pick's result, win or lose.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What sports do you cover? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-a"><p>NFL, NBA, NHL, WNBA and MLB, year-round — including each league's off-season through futures and win-total markets.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I cancel anytime? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-a"><p>Yes. Every plan is month-to-month with no contract. Cancel anytime from your account settings.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How is this different from picking games myself? <i class="fa-solid fa-chevron-down"></i></button>
+      <div class="faq-a"><p>The model processes injury reports, line movement, weather, and years of matchup history at a scale no individual bettor can match — then shows you exactly how confident it is, pick by pick.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-final">
+  <h2>Your next winning season starts with the next pick.</h2>
+  <a href="#pricing" class="btn-primary large">Get Today's Picks</a>
+  <div class="countdown">Next pick drops in <span id="countdown">--:--:--</span></div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><i class="fa-solid fa-chart-line"></i> TailEdge</div>
+      <p>AI-powered sports analysis for NFL, NBA, NHL, WNBA &amp; MLB.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#how">How It Works</a>
+      <a href="#stats">Stats &amp; Weather</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#record">Track Record</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <p>TailEdge provides sports analysis, statistics and predictions for entertainment and informational purposes only. We do not accept wagers, are not a sportsbook, and are not affiliated with the NFL, NBA, NHL, WNBA, MLB, or any official league or team. You must be 18+ (21+ in some states) to purchase a subscription. No purchase guarantees profit. If you or someone you know has a gambling problem, call or text 1-800-GAMBLER (1-800-426-2537).</p>
+    <p>&copy; 2026 TailEdge. Demo site for illustration purposes. Stadium/arena photography via Pexels, free-license real photography.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
